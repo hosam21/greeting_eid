@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تهاني عيد الفطر</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lateef" rel="stylesheet">
+    <!-- Make sure html2canvas is loaded before our scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <main class="main-container">
+        <!-- Stars Background -->
+        <div id="stars-container" class="stars-container"></div>
+        
+        <!-- Decorative elements -->
+        <div class="decorative-elements">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="decorative-circle circle-3"></div>
+        </div>
+
+        <!-- Confetti Container -->
+        <div id="confetti-container" class="confetti-container hidden"></div>
+
+        <div class="container">
+            <header class="header">
+                <h1 id="main-title" class="main-title">تهاني عيد الفطر</h1>
+                <p id="subtitle" class="subtitle">اعمل بطاقة تهنئة مخصوصة ليك وشاركها مع حبايبك</p>
+            </header>
+
+            <div id="form-container" class="form-container">
+                <div class="card">
+                    <form id="greeting-form" class="greeting-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">اسمك</label>
+                            <input 
+                                id="name" 
+                                type="text" 
+                                class="form-input" 
+                                placeholder="Enter your name" 
+                                required
+                            >
+                        </div>
+                        <button type="submit" class="button button-primary">اصنع بطاقة تهنئتي</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="card-container" class="card-container hidden">
+                <div class="greeting-card">
+                    <div class="greeting-card-content">
+                        <!-- Background gradient -->
+                        <div class="card-background"></div>
+                        
+                        <!-- Stars inside card -->
+                        <div id="card-stars" class="card-stars"></div>
+                        
+                        <!-- Decorative patterns -->
+                        <div class="card-patterns"></div>
+                        
+                        <!-- Fireworks -->
+                        <div id="fireworks-container" class="fireworks-container"></div>
+                        
+                        <!-- Mosque silhouette -->
+                        <div class="mosque-silhouette">
+                            <div class="mosque-container">
+                                <!-- Main dome -->
+                                <div class="main-dome">
+                                    <div class="dome-top"></div>
+                                    <div class="dome-base"></div>
+                                </div>
+                                
+                                <!-- Minarets -->
+                                <div class="minaret minaret-left">
+                                    <div class="minaret-top"></div>
+                                </div>
+                                <div class="minaret minaret-right">
+                                    <div class="minaret-top"></div>
+                                </div>
+                                
+                                <!-- Smaller domes -->
+                                <div class="small-dome small-dome-left">
+                                    <div class="small-dome-top"></div>
+                                    <div class="small-dome-base"></div>
+                                </div>
+                                <div class="small-dome small-dome-right">
+                                    <div class="small-dome-top"></div>
+                                    <div class="small-dome-base"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Crescent moon decoration -->
+                        <div id="crescent-moon" class="crescent-moon">
+                            <div class="moon-glow"></div>
+                            <div class="moon-body"></div>
+                            <div class="moon-shadow"></div>
+                        </div>
+                        
+                        <!-- Lantern decorations -->
+                        <div id="lantern-1" class="lantern lantern-1">
+                            <div class="lantern-body">
+                                <div class="lantern-top"></div>
+                                <div class="lantern-pattern"></div>
+                                <div class="lantern-glow"></div>
+                                <div class="lantern-sparkles"></div>
+                            </div>
+                        </div>
+                        
+                        <div id="lantern-2" class="lantern lantern-2">
+                            <div class="lantern-body">
+                                <div class="lantern-top"></div>
+                                <div class="lantern-pattern"></div>
+                                <div class="lantern-glow"></div>
+                                <div class="lantern-sparkles"></div>
+                            </div>
+                        </div>
+                        
+                        <div id="lantern-3" class="lantern lantern-3">
+                            <div class="lantern-body">
+                                <div class="lantern-top"></div>
+                                <div class="lantern-pattern"></div>
+                                <div class="lantern-glow"></div>
+                                <div class="lantern-sparkles"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Greeting text -->
+                        <div class="greeting-text">
+                            <div class="greeting-header">
+                                <h2 id="eid-mubarak" class="eid-mubarak">
+                                    ❤️عيد سعيد
+                                </h2>
+                                <div class="divider"></div>
+                            </div>
+                            
+                            <div class="greeting-body">
+                                <p class="greeting-message">يا رب يكون يومك مليان فرحة وبركة وسلام</p>
+                                <h3 id="recipient-name" class="recipient-name"></h3>
+                            </div>
+                            
+                            <p class="greeting-footer">يا رب العيد يدخل على قلبك بالسعادة ويكون ذكرى حلوة مع اللي بتحبّهم .</p>
+                            <p class="greeting-footer">کْلَ عٌآمً وٌأنِت طِيَبً</p>
+                        </div>
+                        
+                        <!-- Floating decorative elements -->
+                        <div id="floating-elements" class="floating-elements"></div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="reset-button" class="button button-outline">اعمل بطاقة تانية</button>
+                    <button id="share-button" class="button button-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                        شارك البطاقة
+                    </button>
+                    <button id="download-button" class="button button-outline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        حمِّل
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>© <span id="current-year"></span> Eid Mubarak Greetings | Made by Hosam ❤️</p>
+        </footer>
+    </main>
+
+    <script src="scripts/stars.js"></script>
+    <script src="scripts/lanterns.js"></script>
+    <script src="scripts/fireworks.js"></script>
+    <script src="scripts/confetti.js"></script>
+    <script src="scripts/animations.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
